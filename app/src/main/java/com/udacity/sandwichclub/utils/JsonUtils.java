@@ -36,9 +36,11 @@ public class JsonUtils {
             {
                 for (int i=0;i<alternativeNames.length();i++)
                 {
-                    alsoKnownAs.add(alternativeNames.getString(i)+",");
+                    alsoKnownAs.add(alternativeNames.getString(i));
                 }
             }
+
+
 
 
             JSONArray ingredientsJSONArray = object.getJSONArray("ingredients");

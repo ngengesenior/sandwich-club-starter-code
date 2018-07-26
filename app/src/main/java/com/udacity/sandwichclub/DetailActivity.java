@@ -34,10 +34,9 @@ public class DetailActivity extends AppCompatActivity {
         ingredientsTv = findViewById(R.id.ingredients_tv);
 
 
-
         Intent intent = getIntent();
         if (intent == null) {
-            Log.d("ERROR","Error occured");
+            Log.d("ERROR", "Error occured");
             closeOnError();
 
         }
@@ -45,7 +44,7 @@ public class DetailActivity extends AppCompatActivity {
         int position = intent.getIntExtra(EXTRA_POSITION, DEFAULT_POSITION);
         if (position == DEFAULT_POSITION) {
             // EXTRA_POSITION not found in intent
-            Log.d("POS-",String.valueOf(position));
+            Log.d("POS-", String.valueOf(position));
             closeOnError();
             return;
         }
@@ -74,23 +73,23 @@ public class DetailActivity extends AppCompatActivity {
 
     private void populateUI(Sandwich sandwich) {
         placeOfOriginTv.setText(sandwich.getPlaceOfOrigin());
-        String alternativeNames = "";
-        if(sandwich.getAlsoKnownAs() != null){
-        for(String str:sandwich.getAlsoKnownAs()){
-            alternativeNames = alternativeNames+str+",";
+        StringBuilder alternativeNames = new StringBuilder();
+        if (sandwich.getAlsoKnownAs() != null || sandwich.getAlsoKnownAs().size() > 0) {
+            for (String str : sandwich.getAlsoKnownAs()) {
+                alternativeNames.append(str).append(",");
 
+            }
+
+            alternativeNames = new StringBuilder(alternativeNames.substring(0, alternativeNames.length()));
+            alsoKnownAsTv.setText(alternativeNames.toString());
+        } else {
+            alsoKnownAsTv.append(getString(R.string.no_alternative_names));
         }
-        alternativeNames = alternativeNames.substring(0,alternativeNames.length());
-        }
-
-        else {
-            alternativeNames+= getString(R.string.no_alternative_names);
-        }
 
 
-        alsoKnownAsTv.setText(alternativeNames);
 
-        if(sandwich.getIngredients().size() > 0) {
+
+        if (sandwich.getIngredients().size() > 0) {
             StringBuilder ingredients = new StringBuilder();
             for (String ingredient : sandwich.getIngredients()) {
 
@@ -98,11 +97,12 @@ public class DetailActivity extends AppCompatActivity {
 
             }
 
-            ingredientsTv.append(ingredients);
+            ingredients = ingredients.deleteCharAt(ingredients.length() - 1);
+
+            ingredientsTv.append(ingredients.toString());
         }
 
         description.setText(sandwich.getDescription());
-
 
 
     }
