@@ -26,11 +26,6 @@ display in a sensible way. Implement the JSON parsing in JsonUtils so it
 produces a Sandwich Object that can be used to populate the UI that you designed.
 
 ## Screenshots
-The screenshots of the application are as below
+The screenshots of the application are as below are found in the **screenshots directory**
 
-### Sandwich list
-![Sandwich list](screenshots/sandwich-list.png width="80")
-
-### Sandwich detail
-![Sanwich detail](screenshots/detail1.png width="80")
 
