@@ -43,16 +43,17 @@
         android:layout_marginLeft="32dp"
         android:layout_marginStart="32dp"
         android:layout_marginTop="8dp"
+        android:textSize="@dimen/body_text_size"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/also_known_as_label"
-        />
+        app:layout_constraintTop_toBottomOf="@+id/also_known_as_label" />
+
     <TextView
         android:id="@+id/place_of_origin_label"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="16dp"
-        android:layout_marginStart="16dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginStart="8dp"
         android:layout_marginTop="28dp"
         android:text="@string/detail_place_of_origin_label"
         android:textStyle="bold"
@@ -91,11 +92,12 @@
         android:layout_marginRight="8dp"
         android:layout_marginStart="32dp"
         android:layout_marginTop="8dp"
+        android:textSize="@dimen/body_text_size"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/ingredients_label"
-        tools:text="Meat,rice,beans,anybalalajhdkkkdkdkkdkkddkkdkkdkkdkkdkkdkdkkdkkkkdkkdkkdkkdkdkkkkkkkkkkkkkkkkkkkkkkkkkkk" />
+        />
 
     <TextView
         android:id="@+id/description_label"
@@ -115,10 +117,11 @@
         android:layout_height="wrap_content"
         android:layout_marginEnd="8dp"
         android:layout_marginLeft="8dp"
-        android:lineSpacingMultiplier="1.2"
         android:layout_marginRight="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="12dp"
+        android:lineSpacingMultiplier="1.4"
+        android:textSize="@dimen/body_text_size"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/description_label" />
