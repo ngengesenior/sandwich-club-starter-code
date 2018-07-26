@@ -29,8 +29,8 @@ produces a Sandwich Object that can be used to populate the UI that you designed
 The screenshots of the application are as below
 
 ### Sandwich list
-![Sandwich list](screenshots/sandwich-list.png)
+![Sandwich list](screenshots/sandwich-list.png width="80")
 
 ### Sandwich detail
-![Sanwich detail](screenshots/detail1.png)
+![Sanwich detail](screenshots/detail1.png width="80")
 
