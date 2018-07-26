@@ -1,5 +1,8 @@
 package com.udacity.sandwichclub.utils;
 
+import android.util.Log;
+
+import com.udacity.sandwichclub.R;
 import com.udacity.sandwichclub.model.Sandwich;
 
 import org.json.JSONArray;
@@ -33,9 +36,10 @@ public class JsonUtils {
             {
                 for (int i=0;i<alternativeNames.length();i++)
                 {
-                    alsoKnownAs.add(alternativeNames.getString(i));
+                    alsoKnownAs.add(alternativeNames.getString(i)+",");
                 }
             }
+
 
             JSONArray ingredientsJSONArray = object.getJSONArray("ingredients");
             if(ingredientsJSONArray != null)
@@ -45,6 +49,7 @@ public class JsonUtils {
                     ingredients.add(ingredientsJSONArray.getString(i));
                 }
             }
+
 
             //Construct sandwich from parsed joson string
             Sandwich sandwich = new Sandwich(mainName,alsoKnownAs,placeOfOrigin,description,image,ingredients);

@@ -68,21 +68,33 @@ public class DetailActivity extends AppCompatActivity {
     }
 
     private void closeOnError() {
-        //finish();
+        finish();
         Toast.makeText(this, R.string.detail_error_message, Toast.LENGTH_SHORT).show();
     }
 
     private void populateUI(Sandwich sandwich) {
         placeOfOriginTv.setText(sandwich.getPlaceOfOrigin());
+        String alternativeNames = "";
+        if(sandwich.getAlsoKnownAs() != null){
         for(String str:sandwich.getAlsoKnownAs()){
-            alsoKnownAsTv.append(str+",");
+            alternativeNames = alternativeNames+str+",";
+
         }
+        alternativeNames = alternativeNames.substring(0,alternativeNames.length());
+        }
+
+        else {
+            alternativeNames+= getString(R.string.no_alternative_names);
+        }
+
+
+        alsoKnownAsTv.setText(alternativeNames);
 
         if(sandwich.getIngredients().size() > 0) {
             StringBuilder ingredients = new StringBuilder();
             for (String ingredient : sandwich.getIngredients()) {
 
-                ingredients.append(ingredients).append(",");
+                ingredients.append(ingredient).append(",");
 
             }
 
